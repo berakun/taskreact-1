@@ -28,54 +28,56 @@ function Index() {
 
     return (
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-screen h-screen bg-white grid justify-center items-center">
-            <table class="w-full container mx-auto text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-white dark:text-gray-600">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-
-                        </th>
-                        {aspek.map((as) =>
-                            // mahasiswa.map((ask) => (
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-screen h-screen bg-white justify-center items-center">
+            <div className="flex flex-col">
+                <table class="w-full container mx-auto text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-white dark:text-gray-600">
+                        <tr>
                             <th scope="col" class="px-6 py-3">
-                                {as.text}
+
                             </th>
-                            // ))
-                        )}
-                    </tr>
-                </thead>
-                <tbody>
-                    {mahasiswa.map((maha) =>
-                        <tr class="bg-white dark:bg-white dark:border-gray-600 dark:text-gray-600 border-2">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-600 whitespace-nowrap ">
-                                {maha.text}
-                            </th>
-                            <td class="px-6 py-4">
-                                <div className="border-2 border-black">
-                                    {maha.text2}
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div className="border-2 border-black">
-                                    {maha.text3}
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div className="border-2 border-black">
-                                    {maha.text4}
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div className="border-2 border-black">
-                                    {maha.text5}
-                                </div>
-                            </td>
+                            {aspek.map((as) =>
+                                // mahasiswa.map((ask) => (
+                                <th scope="col" class="px-6 py-3">
+                                    {as.text}
+                                </th>
+                                // ))
+                            )}
                         </tr>
-                    )}
-                </tbody>
-            </table>
-            <div className="pt-6">
-                <button>
+                    </thead>
+                    <tbody>
+                        {mahasiswa.map((maha) =>
+                            <tr class="bg-white dark:bg-white dark:border-gray-600 dark:text-gray-600 border-2">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-600 whitespace-nowrap ">
+                                    {maha.text}
+                                </th>
+                                <td class="px-6 py-4">
+                                    <div className="border-2 border-black">
+                                        {maha.text2}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div className="border-2 border-black">
+                                        {maha.text3}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div className="border-2 border-black">
+                                        {maha.text4}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div className="border-2 border-black">
+                                        {maha.text5}
+                                    </div>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
+            <div className="pt-6 container mx-auto flex justify-end">
+                <button className="bg-gray-600 text-black hover:bg-blue-900 border-2 border-black hover:border-blue-900">
                     Simpan
                 </button>
             </div>
