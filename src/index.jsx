@@ -1,27 +1,16 @@
-import React from 'react'
-import { useState } from 'react'
+import { useState, React } from 'react'
 
 function Index() {
 
-    const aspek = [
-        { text: 'aspek penilaian 1' },
-        { text: 'aspek penilaian 2' },
-        { text: 'aspek penilaian 3' },
-        { text: 'aspek penilaian 4' }
-    ]
+    const aspek = Array.from({ length: 4 }, (_, index) => ({
+        id: `aspek ${index + 1}`,
+        name: `Aspek Penelitian ${index + 1}`,
+    }));
 
-    const mahasiswa = [
-        { text: 'mahasiswa 1', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 2', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 3', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 4', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 5', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 6', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 7', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 8', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 9', text2: '', text3: '', text4: '', text5: '' },
-        { text: 'mahasiswa 10', text2: '', text3: '', text4: '', text5: '' }
-    ]
+    const mahasiswa = Array.from({ length: 10 }, (_, index) => ({
+        id: `mahasiswa ${index + 1}`,
+        name: `Mahassiwa ${index + 1}`,
+    }));
 
     const [selectedOptions, setSelectedOptions] = useState({});
 
@@ -41,14 +30,11 @@ function Index() {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-white dark:text-gray-600">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-
                             </th>
                             {aspek.map((as) =>
-                                // mahasiswa.map((ask) => (
                                 <th scope="col" className="px-6 py-3">
-                                    {as.text}
+                                    {as.name}
                                 </th>
-                                // ))
                             )}
                         </tr>
                     </thead>
@@ -56,65 +42,8 @@ function Index() {
                         {mahasiswa.map((maha) =>
                             <tr className="bg-white dark:bg-white dark:border-gray-600 dark:text-gray-600 border-2">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap ">
-                                    {maha.text}
+                                    {maha.name}
                                 </th>
-                                <td className="px-6 py-4">
-                                    <div className="border-2 border-black">
-                                        <select className='bg-white' value={selectedOptions[maha.text] || ''}
-                                            onChange={(event) => handleOptionChange(event, maha.text)}
-                                        >
-                                            <option value="">Select an option</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="border-2 border-black">
-                                        <select className='bg-white' value={selectedOptions[maha.text] || ''}
-                                            onChange={(event) => handleOptionChange(event, maha.text)}
-                                        >
-                                            <option value="">Select an option</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="border-2 border-black">
-                                        <select className='bg-white' value={selectedOptions[maha.text] || ''}
-                                            onChange={(event) => handleOptionChange(event, maha.text)}
-                                        >
-                                            <option value="">Select an option</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                    </div>
-                                </td>
                                 <td className="px-6 py-4">
                                     <div className="border-2 border-black">
                                         <select className='bg-white' value={selectedOptions[maha.text] || ''}
@@ -142,6 +71,9 @@ function Index() {
             <div className="pt-6 container mx-auto flex justify-end">
                 <button className="bg-gray-600 text-black hover:bg-blue-900 border-2 border-black hover:border-blue-900">
                     Simpan
+                </button>
+                <button className="bg-gray-600 text-black hover:bg-blue-900 border-2 border-black hover:border-blue-900">
+                    Reset
                 </button>
             </div>
         </div>
