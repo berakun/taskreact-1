@@ -1,21 +1,19 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
-  overrides: [
-  ],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
+    // Atur aturan ESLint sesuai kebutuhan Anda
   },
 };
